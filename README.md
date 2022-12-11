@@ -52,5 +52,9 @@ https://console.cloud.google.com/storage/browser/genomics-public-data/references
 #####
 ## Pipeline
 
+Current SCcaller-pipeline includes two major steps, and 17 sub-steps. See the flowchart, and Usage below.
+
 ![alt text](https://github.com/XiaoDongLab/SCcaller-pipeline/blob/main/sccaller_pipeline_flowchart_v1.0.0.png)
 
+#####
+## Usage
