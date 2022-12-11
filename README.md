@@ -137,3 +137,6 @@ Result files of step 2 is explained in the table below.
 |./coverage|summary_coverage_both.csv|No. base pairs covered with at least 20x in both single cell and its bulk|
 |./mutationburden|mutation_burden.csv|A summary of coverage, sensitivity, and SNV and INDEL burdens|
 
+#####
+## Release Notes
+• v1.0.0, 2022.12.10, 1st release version.
