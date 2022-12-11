@@ -14,7 +14,7 @@ Lei Zhang, Moonsook Lee, Alexander Y. Maslov, Jan Vijg, and Xiao Dong. Single-ce
 
 Author: Xiao Dong
 
-Email: biosinodx@gmail.com (X.D.), dong0265@umn.edu (X.D.), spsc83@gmail.com (Y.W.)
+Email: dong0265@umn.edu (X.D.)
 
 Licensed under the GNU Affero General Public License version 3 or later
 
