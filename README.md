@@ -69,6 +69,8 @@ Current SCcaller-pipeline includes two major steps, and 17 sub-steps. See the fl
 
 ### Step 1. QC and alignment
 
+This step uses 8 CPU cores and 32 GB RAM per sample, and takes 2-5 days (may flacturate more) depending on the performance of your computer cluster.
+
 1.1 Deposit fastq files under folder for the pair-end reads for a specific sample:
 ```shell
 ./fastq/${sample_id}_1.fq # read 1
