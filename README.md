@@ -52,5 +52,5 @@ https://console.cloud.google.com/storage/browser/genomics-public-data/references
 #####
 ## Pipeline
 
-![alt text](https://github.com/XiaoDongLab/SCcaller-pipeline/blob/main/sccaller_pipeline_flowchart_v1.0.0.pdf)
+![alt text](https://github.com/XiaoDongLab/SCcaller-pipeline/blob/main/sccaller_pipeline_flowchart_v1.0.0.png)
 
