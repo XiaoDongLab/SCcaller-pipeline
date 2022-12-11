@@ -16,7 +16,7 @@ Author: Xiao Dong
 
 Email: dong0265@umn.edu (X.D.)
 
-Licensed under the GNU Affero General Public License version 3 or later
+Licensed under the GNU Affero General Public License version 3 or later.
 
 #####
 ## Dependencies
