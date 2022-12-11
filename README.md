@@ -48,7 +48,9 @@ https://console.cloud.google.com/storage/browser/genomics-public-data/references
 • dbSNP dataset: Homo_sapiens_assembly38.dbsnp138.vcf
 
 • INDEL datasets: Homo_sapiens_assembly38.known_indels.vcf, Mills_and_1000G_gold_standard.indels.hg38.vcf
-    
 
+#####
+## Pipeline
 
+![alt text](https://github.com/XiaoDongLab/SCcaller-pipeline/blob/main/sccaller_pipeline_flowchart_v1.0.0.png)
 
