@@ -61,11 +61,11 @@ Current SCcaller-pipeline includes two major steps, and 17 sub-steps. See the fl
 
 ### Before usage
 
-0.1 Download and setup all required software tools.
+• 0.1 Download and setup all required software tools.
 
-0.2 Download the reference files, and edit the pipeline files (“sccaller_pipeline_1.sh” and “sccaller_pipeline_2.sh”) to reflect the  directories and file names of the reference files in your system.
+• 0.2 Download the reference files, and edit the pipeline files (“sccaller_pipeline_1.sh” and “sccaller_pipeline_2.sh”) to reflect the  directories and file names of the reference files in your system.
 
-0.3 Edit the pipeline files (“sccaller_pipeline_1.sh” and “sccaller_pipeline_2.sh”) to use your job scheduler (As shown, it is an example to usge an SGE scheduler).
+• 0.3 Edit the pipeline files (“sccaller_pipeline_1.sh” and “sccaller_pipeline_2.sh”) to use your job scheduler (As shown, it is an example to usge an SGE scheduler).
 
 ### Step 1. Quality control and alignment
 
@@ -73,12 +73,12 @@ Current SCcaller-pipeline includes two major steps, and 17 sub-steps. See the fl
 
 This step uses 8 CPU cores and 32 GB RAM per sample (either cell or bulk), and takes 2-5 days (may flacturate more) depending on the performance of your computer cluster.
 
-1.1 Deposit fastq files under folder for the pair-end reads for a specific sample:
+• 1.1 Deposit fastq files under folder for the pair-end reads for a specific sample:
 ```shell
 ./fastq/${sample_id}_1.fq # read 1
 ./fastq/${sample_id}_2.fq # read 2
 ```
-1.2 Submit this job to a computer cluster as the following (shown for SGE):
+• 1.2 Submit this job to a computer cluster as the following (shown for SGE):
 
 For a single cell sample:
 ```shell
@@ -117,7 +117,7 @@ Result files of step 1 is explained in the table below.
 
 This step uses 8 CPU cores and 64 GB RAM per cell, and takes 1-2 days (may flacturate more) depending on the performance of your computer cluster.
 
-2.1 Submit this job to a computer cluster as the following (shown for SGE):
+• 2.1 Submit this job to a computer cluster as the following (shown for SGE):
 ```shell
 qsub sccaller_pipeline_2.sh ${bulk_id} ${cell_id}
 ```
