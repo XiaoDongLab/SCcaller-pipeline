@@ -57,7 +57,7 @@ Current SCcaller-pipeline includes two major steps, and 17 sub-steps. See the fl
 ![alt text](https://github.com/XiaoDongLab/SCcaller-pipeline/blob/main/sccaller_pipeline_flowchart_v1.0.0.png)
 
 #####
-## Usage
+## Usage and Results
 
 ### Before usage
 
@@ -69,7 +69,9 @@ Current SCcaller-pipeline includes two major steps, and 17 sub-steps. See the fl
 
 ### Step 1. Quality control and alignment
 
-This step uses 8 CPU cores and 32 GB RAM per sample, and takes 2-5 days (may flacturate more) depending on the performance of your computer cluster.
+#### Usage of step 1
+
+This step uses 8 CPU cores and 32 GB RAM per sample (either cell or bulk), and takes 2-5 days (may flacturate more) depending on the performance of your computer cluster.
 
 1.1 Deposit fastq files under folder for the pair-end reads for a specific sample:
 ```shell
@@ -86,8 +88,34 @@ For a bulk DNA sample:
 ```shell
 qsub sccaller_pipeline_1.sh ${sample_id} bulk
 ```
+#### Understanding results of step 1
+
+Result files of step 1 is explained in the table below.
+
+|Directory|File(s)|Note and usage|
+| --- | --- | --- |
+|./${sample_id}|${sample_id}_1 (or 2) _fastqc.html (or .zip)|FastQC reports|
+|./${sample_id}|${sample_id}.markilluminaadapters_metrics.txt|Markadaptor report|
+|./${sample_id}|${sample_id}.bwa.stderr.log|Alignment report|
+|./${sample_id}|${sample_id}.hg38.duplicate_metrics|Markduplicate report|
+|./${sample_id}|${sample_id}.hg38.recal_data.csv|RBQS report|
+|./${sample_id}|${sample_id}.hg38.gatk4.bam|Alignment bam file; input of the next step|
+|./${sample_id}|${sample_id}.hg38.gatk4.bai|bam index|
+|./${sample_id}|${sample_id}.hg38.gatk4.bam.md5|bam md5|
+|./coverage|summary_coverage.csv|Summary of sequencing coverage|
+|./ht|${sample_id}.gvcf.gz|Germline variants (vcf; only for bulk DNA)|
+|./ht|${sample_id}.gvcf.gz.tbi|Index of germline variant vcf file (only for bulk DNA)|
+|./ht|${sample_id}.hg38.hsnp.biallelic.dbsnp.vcf|Heterozygous germline SNVs reported in dbSNP (vcf; only for bulk DNA); input of the next step|
+|./ht|${sample_id}.hg38.hindel.biallelic.dbsnp.vcf|Heterozygous germline INDELs reported in dbSNP (vcf; only for bulk DNA); input of the next step|
+|./sensitivity|${sample_id}.hsnp.biallelic.dbsnp.20x.sorted.bed|Heterozygous germline SNVs reported in dbSNP (bed; only for bulk DNA); input of the next step|
+|./sensitivity|${sample_id}.hindel.biallelic.dbsnp.20x.sorted.bed|Heterozygous germline INDELs reported in dbSNP (bed; only for bulk DNA); input of the next step|
+
 
 ### Step 2. Variant calling and mutation burden estimation
+
+#### Usage of step 2
+
+This step uses 8 CPU cores and 64 GB RAM per cell, and takes 1-2 days (may flacturate more) depending on the performance of your computer cluster.
 
 2.1 Submit this job to a computer cluster as the following (shown for SGE):
 ```shell
@@ -95,5 +123,17 @@ qsub sccaller_pipeline_2.sh ${bulk_id} ${cell_id}
 ```
 "bulk_id" and "cell_id" are the "sample_id" of the bulk DNA and the single cell, respectively.
 
+#### Understanding results of step 2
 
+Result files of step 2 is explained in the table below.
+
+|Directory|File(s)|Note and usage|
+| --- | --- | --- |
+|./sccaller|${cell_id}.sccaller.vcf|SCcaller results for all candidate variant positions|
+|./sccaller|${cell_id}.somatic.snv.vcf|SCcaller results for somatic SNVs|
+|./sccaller|${cell_id}.somatic.indel.vcf|SCcaller results for somatic INDELs|
+|./sccaller|sc_${cell_id}.sccaller_01to-1.log|SCcaller log file|
+|./sensitivity|sensitivity.txt|Estimated variant calling sensitivity based on germline heterozygous SNVs and INDELs|
+|./coverage|summary_coverage_both.csv|No. base pairs covered with at least 20x in both single cell and its bulk|
+|./mutationburden|mutation_burden.csv|A summary of coverage, sensitivity, and SNV and INDEL burdens|
 
