@@ -1,5 +1,5 @@
 # SCcaller-pipeline
-An pipeline for analyzing single-cell whole-genome sequencing data: from fastq files to mutation calls and mutation burdens.
+A computational pipeline for analyzing single-cell whole-genome sequencing data: from fastq files to mutation calls and mutation burdens.
 
 Version: 1.0.0
 
