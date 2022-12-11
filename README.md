@@ -67,7 +67,7 @@ Current SCcaller-pipeline includes two major steps, and 17 sub-steps. See the fl
 
 0.3 Edit the pipeline files (“sccaller_pipeline_1.sh” and “sccaller_pipeline_2.sh”) to use your job scheduler (As shown, it is an example to usge an SGE scheduler).
 
-### Step 1. QC and alignment
+### Step 1. Quality control and alignment
 
 This step uses 8 CPU cores and 32 GB RAM per sample, and takes 2-5 days (may flacturate more) depending on the performance of your computer cluster.
 
@@ -86,6 +86,14 @@ For a bulk DNA sample:
 ```shell
 qsub sccaller_pipeline_1.sh ${sample_id} bulk
 ```
+
+### Step 2. Variant calling and mutation burden estimation
+
+2.1 Submit this job to a computer cluster as the following (shown for SGE):
+```shell
+qsub sccaller_pipeline_2.sh ${bulk_id} ${cell_id}
+```
+"bulk_id" and "cell_id" are the "sample_id" of the bulk DNA and the single cell, respectively.
 
 
 
