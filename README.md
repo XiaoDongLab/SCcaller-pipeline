@@ -7,6 +7,7 @@ Updated date: 2022.12.10
 
 Citation:
 
+Lei Zhang, Moonsook Lee, Alexander Y. Maslov, Jan Vijg, and Xiao Dong. Single-cell whole-genome sequencing for discovering somatic mutations. In submission.
 
 #####
 ## Author and License
