@@ -58,3 +58,32 @@ Current SCcaller-pipeline includes two major steps, and 17 sub-steps. See the fl
 
 #####
 ## Usage
+
+### Before usage
+
+0.1 Download and setup all required software tools.
+
+0.2 Download the reference files, and edit the pipeline files (“sccaller_pipeline_1.sh” and “sccaller_pipeline_2.sh”) to reflect the  directories and file names of the reference files in your system.
+
+0.3 Edit the pipeline files (“sccaller_pipeline_1.sh” and “sccaller_pipeline_2.sh”) to use your job scheduler (As shown, it is an example to usge an SGE scheduler).
+
+### Step 1. QC and alignment
+
+1.1 Deposit fastq files under folder for the pair-end reads for a specific sample:
+```shell
+./fastq/${sample_id}_1.fq # read 1
+./fastq/${sample_id}_2.fq # read 2
+```
+1.2 Submit this job to a computer cluster as the following (shown for SGE):
+
+For a single cell sample:
+```shell
+qsub sccaller_pipeline_1.sh ${sample_id} cell
+```
+For a bulk DNA sample: 
+```shell
+qsub sccaller_pipeline_1.sh ${sample_id} bulk
+```
+
+
+
