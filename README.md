@@ -75,8 +75,8 @@ This step uses 8 CPU cores and 32 GB RAM per sample (either cell or bulk), and t
 
 • 1.1 Deposit fastq files under folder for the pair-end reads for a specific sample:
 ```shell
-./fastq/${sample_id}_1.fq # read 1
-./fastq/${sample_id}_2.fq # read 2
+./fastq/${sample_id}_1.fq.gz # read 1
+./fastq/${sample_id}_2.fq.gz # read 2
 ```
 • 1.2 Submit this job to a computer cluster as the following (shown for SGE):
 
