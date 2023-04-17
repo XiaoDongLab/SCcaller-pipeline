@@ -142,6 +142,12 @@ Result files of step 2 is explained in the table below.
 |./coverage|summary_coverage_both.csv|No. base pairs covered with at least 20x in both single cell and its bulk|
 |./mutationburden|mutation_burden.csv|A summary of coverage, sensitivity, and SNV and INDEL burdens|
 
+#### Check pionts of step 2
+
+Regarding variant calling quality, although we did not observe any cells of significantly low variant calling quality in all our previous projects, it is still important to monitor its quality. The η value estimated by SCcaller indicates bias in genome amplification and can be used as an important quality measurement: a lower η value corresponds to higher bias and results a more conservative cutoff of variant calling in SCcaller. In the figure below, we provide η values of all cells in three major datasets above including human lymphocytes (Zhang et al), hepatocytes (Brazhnik et al), and lung epithelium cells (Huang et al) for users to compare with their own data.
+
+![alt text](https://github.com/XiaoDongLab/SCcaller-pipeline/blob/main/sccaller_pipeline_flowchart_v1.0.0.png)
+
 #####
 ## Release Notes
 • v1.0.0, 2022.12.10, 1st release version.
