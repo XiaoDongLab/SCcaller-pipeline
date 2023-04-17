@@ -148,6 +148,8 @@ Result files of step 2 is explained in the table below.
 
 ![alt text](https://github.com/XiaoDongLab/SCcaller-pipeline/blob/main/sccaller_pipeline_eta_v1.0.0.png)
 
+In the figure above, average η value of autosomes per cell was calculated for each single cell in the three studies. Boxplot elements are defined as: center line indicates median, box limits indicate upper and lower quartiles, whiskers indicate 1.5× interquartile range, and points indicate the outliers of the boxplots.
+
 #####
 ## Release Notes
 • v1.0.0, 2022.12.10, 1st release version.
