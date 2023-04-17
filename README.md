@@ -110,6 +110,11 @@ Result files of step 1 is explained in the table below.
 |./sensitivity|${sample_id}.hsnp.biallelic.dbsnp.20x.sorted.bed|Heterozygous germline SNVs reported in dbSNP (bed; only for bulk DNA); input of the next step|
 |./sensitivity|${sample_id}.hindel.biallelic.dbsnp.20x.sorted.bed|Heterozygous germline INDELs reported in dbSNP (bed; only for bulk DNA); input of the next step|
 
+#### Check points of step 1
+
+• For cells of substantially less sequencing coverage (e.g., 30% genome covered with 20x depth), first check if enough sequencing data was obtained for both single cells and their bulk DNA, and if so, this suggests severe allelic dropouts of the cells, which are rare for amplicons of enough yield and passed the LDO test.
+
+• For most bulk DNA, typically >1 million heterozygous germline SNVs and >100 thousand heterozygous germline INDELs are observed from its sequencing data and reported by the dbSNP database before.
 
 ### Step 2. Variant calling and mutation burden estimation
 
