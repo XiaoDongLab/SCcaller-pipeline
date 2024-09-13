@@ -3,11 +3,12 @@ A computational pipeline for analyzing single-cell whole-genome sequencing data:
 
 Version: 1.0.0
 
-Updated date: 2022.12.10
+Updated date: 2024.09.12
 
 Citation:
 
-Lei Zhang, Moonsook Lee, Alexander Y. Maslov, Cristina Montagna, Jan Vijg, and Xiao Dong. Single-cell whole-genome sequencing for discovering somatic mutations. In revision.
+Lei Zhang, Moonsook Lee, Alexander Y. Maslov, Cristina Montagna, Jan Vijg, and Xiao Dong. Analyzing somatic mutations by single-cell whole-genome sequencing. Nat Protoc. 2024 Feb;19(2):487-516. doi: 10.1038/s41596-023-00914-8. Epub 2023 Nov 23.
+
 
 #####
 ## Author and License
